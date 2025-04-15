@@ -16,7 +16,9 @@ int main() {
 	reverse_string(str2);
 
 	// task3;
-	printf("%d \n", compare_strings(str, str2));
+	const char strcmp1[] = "ABCDE";
+	const char strcmp2[] = "ABCDE";
+	printf("%d \n", compare_strings(strcmp1, strcmp2));
 
 	// task4
 	char strvc[] = "Vowels and consonants check";

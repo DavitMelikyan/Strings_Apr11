@@ -1,18 +1,19 @@
 #include <string.h>
 int compare_strings(const char *str1, const char *str2) {
-	int totsum1 = 0;
-	int totsum2 = 0;
-	for (int i = 0; i < strlen(str1); ++i) {
-		totsum1 += str1[i];
+	while (*str1 && *str2) {
+		if (*str1 == *str2) {
+			++str1;
+			++str2;
+		} else if (*str1 > *str2) {
+			return 1;
+		} else {
+			return -1;
+		}
 	}
-	for (int i = 0; i < strlen(str2); ++i) {
-                totsum2 += str2[i];
-        }
-	if (totsum1 == totsum2) {
-		return 0;
-	} else if (totsum1 > totsum2) {
+	if (strlen(str1) > strlen(str2)) {
 		return 1;
-	} else {
+	} else if (strlen(str1) < strlen(str2)) {
 		return -1;
-	}
+	}	
+	return 0;
 }
